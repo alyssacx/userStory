@@ -34,3 +34,17 @@ angular.module('userController', ['userService'])
 	}
 
 })
+
+.controller('AllUsersController', function(users, socketio) {
+
+	var vm = this;
+
+	vm.users = users.data;
+
+	socketio.on('user', function(data) {
+			vm.users.push(data);
+	});
+
+
+
+});
