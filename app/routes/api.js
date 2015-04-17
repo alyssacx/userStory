@@ -171,6 +171,21 @@ module.exports = function(app, express, io) {
 			});
 		});
 
+
+		/*
+		 * DELETE to deletestory.
+		 */
+	api.delete('/:story_id', function(req, res) {
+			Story.remove({
+				_id : req.params.story_id
+			}, function(err, stories) {
+				if (err)
+					res.send(err);
+
+				res.send(stories);
+			});
+	});
+
 	api.get('/me', function(req, res) {
 		res.send(req.decoded);
 	});

@@ -12,6 +12,17 @@ angular.module('storyController', ['storyService'])
 			});
 
 
+		vm.deleteStory = function(id) {
+
+			vm.processing = true;
+			vm.message = '';
+			Story.delete(id)
+				.success(function(data) {
+					vm.processing = false;
+					vm.stories = data;
+				});
+		};
+		
 		vm.createStory = function() {
 
 			vm.processing = true;
@@ -30,6 +41,10 @@ angular.module('storyController', ['storyService'])
 				});
 
 		};
+
+		
+
+		
 
 		socketio.on('story', function(data) {
 			vm.stories.push(data);

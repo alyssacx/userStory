@@ -11,8 +11,22 @@
 
 			<div class="panel panel-success">
 				<div class="panel-heading">Your Stories</div>
-				<div class="panel-body" ng-repeat="each in story.stories | reverse">
-					<p>{{ each.content }}</p>
+				<div class="panel-body" >
+				<table class="table table-hover" >
+					<thead>
+						<tr class="active">
+							<th class="active">Story id</th>
+							<th class="active">Story Content</th>
+						</tr>
+					<thead>
+					<tbody>
+						<tr class="" ng-repeat="each in story.stories | reverse">
+							<td class="">{{ each._id}}</td>
+							<td class="">{{ each.content }}</td>
+						</tr>
+					</tbody>
+				</table>
+
 				</div>
 			</div>
 

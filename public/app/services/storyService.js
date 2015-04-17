@@ -18,7 +18,10 @@ angular.module('storyService', [])
 		return $http.post('/api/', storyData);
 	}
 
-
+	storyFactory.delete = function(id) {
+		$http.delete('/api/' + id);
+		return $http.get('/api/');
+	}
 	
 
 	return storyFactory;
