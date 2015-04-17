@@ -33,19 +33,21 @@
 			</div>
 
 			<div class="panel panel-success">
-				<div class="panel-heading">Your Stories</div>
+				<div class="panel-heading">Your Stories <span class="text-right">{{story.stories.length}}</span></div>
 				<div class="panel-body">
 					<table class="table table-hover" >
 					<thead>
 						<tr class="active">
-							<th class="active">Complete</th>
+							<th class="active">Status</th>
 							<th class="active">Story Content</th>
+							<th class="active">Action</th>
 						</tr>
 					<thead>
 					<tbody>
 						<tr class="" ng-repeat="each in story.stories | reverse">
-							<td class=""><input type="checkbox" ng-click="story.deleteStory(each._id)"></td>
+							<td class=""><span class="glyphicon glyphicon-ok" ng-click="story.deleteStory(each._id)"></span></td>
 							<td class="">{{ each.content }}</td>
+							<td><button class="btn btn-default">edit</button></td>
 						</tr>
 					</tbody>
 				</table>
